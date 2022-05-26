@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 import { addEducation } from '../../actions/profile';
 const AddEducation = ({addEducation, history}) => {
   const [formData, setFormData]=useState({
-    institute:'',
+    school:'',
     degree:'',
-    location:'',
+    fieldofstudy:'',
     to:'',
     current:false,
     description:''
@@ -15,9 +15,9 @@ const AddEducation = ({addEducation, history}) => {
 
   const[toDateDisabled, toggleDisabled]=useState(false);
 
-  const{ institute, degree, location, from, to, current, description} = formData;
+  const{ school, degree, fieldofstudy, from, to, current, description} = formData;
 
-  const onChange=e=>setFormData({...formData,[e.target.name]:e.target.value});
+  const onChange=(e)=>setFormData({...formData,[e.target.name]: e.target.value});
 
 
   return (
@@ -34,13 +34,13 @@ const AddEducation = ({addEducation, history}) => {
         addEducation(formData,history);
       }}>
         <div class="form-group">
-          <input type="text" placeholder="* College or Bootcamp" name="institute" value={institute} onChange={e=>onChange(e)} required />
+          <input type="text" placeholder="* College or Bootcamp" name="school" value={school} onChange={e=>onChange(e)} required />
         </div>
         <div class="form-group">
           <input type="text" placeholder="* Degree or Certificate" name="degree" value={degree} onChange={e=>onChange(e)} required />
         </div>
         <div class="form-group">
-          <input type="text" placeholder="Location" name="location" value={location} onChange={e=>onChange(e)}/>
+          <input type="text" placeholder="Fieldofstudy" name="fieldofstudy" value={fieldofstudy} onChange={e=>onChange(e)}/>
         </div>
         <div class="form-group">
           <h4>From Date</h4>

@@ -6,6 +6,7 @@ const auth = require('../../middleware/auth');
 const { check, validationResult } = require('express-validator');
 const Profile=require('../../models/Profile');
 const User=require('../../models/User');
+const post=require('../../models/Post');
 
 router.get('/me',auth,async(req,res)=>{
     try{
@@ -140,7 +141,8 @@ try{
 //@access    Private
 router.delete('/',auth, async(req,res)=>{
     try{
-        //@todo - remove users post
+        // remove users post
+        await Post.deleteMany({user: req.user.id});
         // Remove profile
         await Profile.findOneAndRemove({user: req.user.id});
         // Remove user
