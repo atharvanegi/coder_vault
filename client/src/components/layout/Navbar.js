@@ -6,6 +6,11 @@ import { logout } from "../../actions/auth";
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
+    <li>
+        <Link to="/profiles">
+          Developers
+        </Link>
+      </li>
       <li>
         <Link to="/dashboard">
           <i className="fas fa-user"></i>{" "}
@@ -23,7 +28,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <ul>
       <li>
-        <a href="#!">Developers</a>
+        <Link to="/dashboard">
+          Developers
+        </Link>
       </li>
       <li>
         <Link to="/register">Register</Link>
