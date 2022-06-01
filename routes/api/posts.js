@@ -40,7 +40,7 @@ async(req,res)=>{
 router.get('/',auth, async(req,res)=>{
     try{
         const posts = await Post.find().sort({date:-1});
-        res.json(posts);
+        res.json({posts:[1,2,3,4,5,6,7,8,9,10]});
     }catch(err){
         console.error(err.message);
         res.status(500).send('Server Error');

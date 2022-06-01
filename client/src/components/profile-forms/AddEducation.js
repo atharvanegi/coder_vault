@@ -40,7 +40,7 @@ const AddEducation = ({addEducation, history}) => {
           <input type="text" placeholder="* Degree or Certificate" name="degree" value={degree} onChange={e=>onChange(e)} required />
         </div>
         <div class="form-group">
-          <input type="text" placeholder="Fieldofstudy" name="fieldofstudy" value={fieldofstudy} onChange={e=>onChange(e)}/>
+          <input type="text" placeholder="Field of study" name="fieldofstudy" value={fieldofstudy} onChange={e=>onChange(e)}/>
         </div>
         <div class="form-group">
           <h4>From Date</h4>
@@ -77,4 +77,4 @@ AddEducation.propTypes = {
     addEducation: PropTypes.func.isRequired
 };
 
-export default connect(null,{addEducation})(withRouter(addEducation));
+export default connect(null,{addEducation})(withRouter(AddEducation));
