@@ -36,7 +36,7 @@ experience:[
             type:String,
             required:true
         },
-        lpocation:{
+        location:{
             type:String
         },
         from:{
