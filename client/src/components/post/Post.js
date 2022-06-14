@@ -1,4 +1,4 @@
-import React, { Fragment , useEffect} from 'react'
+import React, { Fragment, useEffect } from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -9,12 +9,13 @@ import { Link } from 'react-router-dom';
 import CommentItem from '../post/CommentItem';
 import CommentForm from '../post/CommentForm';
 
-const Post = ({ getPost, post:{ post, loading}, match }) => {
-    
-    useEffect(()=>{
+const Post = ({ getPost, post: { post, loading }, match }) => {
+
+    useEffect(() => {
         getPost(match.params.id);
     }, [getPost, match.params.id]);
-  return loading || post===null ? <Spinner/> : <Fragment>
+    console.log(post);
+    return loading || post === null ? <Spinner /> : <Fragment>
         <Link to='/posts' className='btn'>
             Back To Posts
         </Link>
@@ -29,6 +30,7 @@ const Post = ({ getPost, post:{ post, loading}, match }) => {
           }
       </div>
   </Fragment>
+        
 };
 
 Post.propTypes = {
@@ -37,7 +39,7 @@ Post.propTypes = {
 
 }
 
-const mapStateToProps = state =>({
+const mapStateToProps = state => ({
     post: state.post
 })
 
